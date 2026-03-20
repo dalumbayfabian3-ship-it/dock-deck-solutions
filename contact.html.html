@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dock & Deck Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body class="subpage">
+
+    <div id="scroll-progress"></div>
+
+    <nav class="navbar" id="main-nav">
+        <div class="logo">
+            <img src="Logo.png" alt="logo" class="littlelogo">
+            <a href="Homepage.html">DOCK & <span>DECK SOLUTIONS</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="Homepage.html#services">Services</a></li>
+            <li><a href="Contact Page.html" class="primary-btn nav-cta">Get a Quote</a></li>
+        </ul>
+    </nav>
+
+    <header class="contact-header" style="background: linear-gradient(rgba(10,35,66,0.8), rgba(10,35,66,0.8)), url('https://images.pexels.com/photos/144024/pexels-photo-144024.jpeg') center/cover;">
+        <div class="container reveal">
+            <h1 style="letter-spacing: 2px;">GET IN TOUCH</h1>
+            <p style="max-width: 600px; margin: 10px auto; opacity: 0.9;">Global maritime support available 24/7. Reach out to our team for crew, provisioning, or engineering solutions.</p>
+        </div>
+    </header>
+
+    <main class="contact-section">
+        <div class="support-cards scroll-reveal">
+            <div class="s-card">
+                <span style="font-size: 2rem;">📧</span>
+                <h4>General Support</h4>
+                <p>Fleet inquiries & partnerships.</p>
+                <a href="mailto:info@dockdeck.com">info@dockdeck.com</a>
+            </div>
+            <div class="s-card">
+                <span style="font-size: 2rem;">💬</span>
+                <h4>24/7 Operations</h4>
+                <p>Urgent technical or crew needs.</p>
+                <a href="https://wa.me/6285194328743">WhatsApp Support →</a>
+            </div>
+            <div class="s-card">
+                <span style="font-size: 2rem;">⚓</span>
+                <h4>Careers</h4>
+                <p>Join our professional crew database.</p>
+                <a href="yacht-crew.html">View Openings</a>
+            </div>
+        </div>
+
+        <div class="professional-contact-wrapper scroll-reveal" style="margin-top: 50px;">
+            <div class="contact-photo-block" style="background-image: url('https://images.pexels.com/photos/2860703/pexels-photo-2860703.jpeg');"></div>
+
+            <div class="contact-info-block">
+                <div class="sidebar-block">
+                    <h3>Our Location</h3>
+                    <p>JALAN TUKAD BADUNG XIX NO 20B<br>DENPASAR BALI, 80239 INDONESIA</p>
+                </div>
+                <div class="sidebar-block">
+                    <h3>Call Us Directly</h3>
+                    <p><strong>HQ:</strong> +62 851 9432 8743</p>
+                    <p><strong>Operations:</strong> 24/7 Available</p>
+                </div>
+                <div class="sidebar-block" style="border-bottom: none;">
+                    <h3>Social Media</h3>
+                    <p>Follow us for maritime updates and new crew openings.</p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h2 style="font-family: 'Oswald'; margin-bottom: 10px; text-transform: uppercase;">Send a Message</h2>
+                <p style="font-size: 0.85rem; color: #777; margin-bottom: 30px;">Fields marked with * are required.</p>
+                
+                <form id="marineContactForm" class="marine-form" action="https://formspree.io/f/your-id" method="POST">
+                    <div class="form-group">
+                        <label>FULL NAME *</label>
+                        <input type="text" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL ADDRESS *</label>
+                        <input type="email" name="email" required placeholder="email@address.com">
+                    </div>
+                    <div class="form-group">
+                        <label>INQUIRY TYPE</label>
+                        <select name="subject">
+                            <option value="quote">Request a Quote</option>
+                            <option value="crew">Crew Inquiry</option>
+                            <option value="tech">Technical Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>MESSAGE *</label>
+                        <textarea name="message" rows="5" required placeholder="How can we help you today?"></textarea>
+                    </div>
+                    <button type="submit" class="primary-btn" style="width: 100%; padding: 1.2rem;">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

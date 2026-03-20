@@ -1,0 +1,140 @@
+:root {
+    --deep-blue: #0a2342;
+    --ocean-blue: #00942c; 
+    --ice-white: #f4f9f9;
+    --pure-white: #ffffff;
+    --border-light: #eeeeee;
+    --transition-smooth: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* --- 1. Global Reset --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--ice-white); 
+    color: var(--deep-blue); 
+    line-height: 1.6; 
+    overflow-x: hidden; 
+}
+
+/* --- 2. Scroll Progress & Navigation --- */
+#scroll-progress { 
+    position: fixed; top: 0; left: 0; height: 4px; 
+    background: var(--ocean-blue); z-index: 9999; width: 0%; 
+}
+
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 5%; position: fixed; width: 100%; z-index: 1000;
+    transition: var(--transition-smooth); background: transparent;
+}
+
+.navbar.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 0.8rem 5%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.logo { display: flex; align-items: center; font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: bold; }
+.logo a, .nav-links li a { text-decoration: none; color: #ffffff; transition: 0.3s ease; }
+.navbar-scrolled .logo a, .navbar-scrolled .nav-links li a { color: var(--deep-blue); }
+.logo span { color: var(--ocean-blue); }
+.littlelogo { width: 50px; height: auto; margin-right: 12px; }
+
+.nav-links { display: flex; list-style: none; align-items: center; gap: 1rem; }
+.nav-links li a { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 0.7rem 1rem; }
+.nav-links li a:hover { color: var(--ocean-blue) !important; }
+
+/* --- 3. Hero & Global Service Grid (Homepage) --- */
+.hero {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    min-height: 100vh; padding: 0 10%; color: #ffffff;
+    background-size: cover; background-position: center;
+}
+
+.hero-content h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 8vw, 5.5rem); text-transform: uppercase; }
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px; max-width: 1400px; margin: 0 auto;
+}
+
+.service-card {
+    background: var(--pure-white);
+    border: 1px solid var(--border-light);
+    border-bottom: 4px solid var(--ocean-blue);
+    padding: 40px 25px; transition: var(--transition-smooth);
+    text-align: center; display: flex; flex-direction: column;
+    justify-content: space-between; height: 100%;
+}
+
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+/* --- 4. Subpage Header & Layout --- */
+.contact-header { 
+    height: 50vh; display: flex; align-items: center; justify-content: center; 
+    text-align: center; color: white; background-size: cover; background-position: center; 
+}
+
+.professional-contact-wrapper {
+    display: grid; grid-template-columns: 1fr 2.5fr; /* Sidebar and Content */
+    max-width: 1300px; margin: -80px auto 60px;
+    background: var(--pure-white); box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    position: relative; z-index: 10; border-radius: 4px; overflow: hidden;
+}
+
+/* --- 5. Sidebar & Content Styling --- */
+.contact-info-block { padding: 60px 50px; border-right: 1px solid var(--border-light); background: #fff; }
+.form-container { padding: 60px 50px; background: #ffffff; }
+
+.sidebar-block { margin-bottom: 40px; }
+.sidebar-block h3 { 
+    font-family: 'Oswald'; color: var(--deep-blue); text-transform: uppercase; 
+    font-size: 1.1rem; border-bottom: 2px solid var(--ocean-blue);
+    padding-bottom: 5px; margin-bottom: 15px; display: inline-block;
+}
+
+.sidebar-block ul li {
+    list-style: none; margin-bottom: 12px; border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px; font-size: 0.9rem; transition: 0.3s ease;
+}
+
+.sidebar-block ul li:hover { color: var(--ocean-blue); padding-left: 5px; }
+
+/* --- 6. Form Elements --- */
+.marine-form input, .marine-form select, .marine-form textarea {
+    width: 100%; padding: 15px; border: 1px solid #e0e0e0; margin-bottom: 20px;
+    border-radius: 4px; transition: 0.3s;
+}
+
+.marine-form input:focus { border-color: var(--ocean-blue); outline: none; box-shadow: 0 0 0 4px rgba(0, 148, 44, 0.1); }
+
+/* --- 7. Global Buttons --- */
+.primary-btn {
+    display: inline-block; padding: 1rem 2.2rem; background: var(--ocean-blue);
+    color: #ffffff !important; text-decoration: none; text-transform: uppercase;
+    font-family: 'Oswald', sans-serif; font-weight: 700; transition: var(--transition-smooth);
+    border: 2px solid var(--ocean-blue); cursor: pointer;
+}
+
+.primary-btn:hover { background: transparent !important; color: var(--ocean-blue) !important; transform: translateY(-3px); }
+
+.nav-cta { padding: 0.6rem 1.2rem !important; font-size: 0.8rem !important; }
+
+/* --- 8. Animations & Reveal --- */
+.reveal, .scroll-reveal { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.active, .scroll-reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- 9. Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .professional-contact-wrapper { grid-template-columns: 1fr; margin: 0 5% 50px; }
+    .contact-info-block { border-right: none; border-bottom: 1px solid var(--border-light); }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 3rem; }
+    .form-container { padding: 40px 20px; }
+    .form-container .service-list { grid-template-columns: 1fr !important; }
+}
